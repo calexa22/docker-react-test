@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -e CI=true calexa22/docker-react-test yarn test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react-test"
+  env: "Dockerreacttest-env"
+  bucket_name: "elasticbeanstalk-us-east-2-984595019613"
+  bucket_path: "docker-react-test"
+  on:
+    branch: master
+  access_key_id: $ACCESS_KEY
+  secret_access_key:
+    secure: "$SECRET_KEY"
