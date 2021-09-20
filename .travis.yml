@@ -7,11 +7,10 @@ script:
 - docker run -e CI=true calexa22/docker-react-test yarn test
 deploy:
   provider: elasticbeanstalk
-  region: us-east-2
-  app: docker-react-test
-  env: Dockerreacttest-env
-  bucket_name: elasticbeanstalk-us-east-2-984595019613
-  bucket_path: docker-react-test
+  region: "us-east-2"
+  app: "docker-react-test"
+  env: "Dockerreacttest-env"
+  bucket_name: "elasticbeanstalk-us-east-2-984595019613"
   on:
     branch: main
   access_key_id:
